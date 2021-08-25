@@ -1,14 +1,14 @@
 .image-title {
     position: relative;
-    height: 26rem;
+    height: 17rem;
 }
 
 .title-background {
-    position: absolute;
+    //position: absolute;
     top: -1.0;
-    left: 0;
+    left: 0.0;
     height: 100%;
-    width: 100%;
+    width: 105%;
 
     /*background-image: url("../media/junction-background.jpg");*/
     /*-moz-background-image: url("../media/junction-background.jpg");*/
@@ -24,21 +24,21 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 100%;
-    background-color: grey;
-    opacity: 50%;
+    width: 103%;
+    background-color: white;
+    opacity: 100%;
 }
 
 .title-content {
     position: absolute;
-    top: 4rem;
+    top: 1rem;
     left: 0;
-    width: 100%;
-    color: white;
+    width: 103%;
+    //color: white;
 }
 
 .topology-diagram {
-    width: 8.5rem;
+    width: 8.6rem;
 }
 
 .topology-diagram + .topology-diagram img {
@@ -56,7 +56,7 @@
 }
 
 .topology-diagram img {
-    width: 100%;
+    width: 105%;
     height: 8.5rem;
     padding: 0 0.5rem ;
 }
