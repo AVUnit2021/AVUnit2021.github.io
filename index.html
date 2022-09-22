@@ -53,6 +53,7 @@
 				<li><h5> <a href="#issue_18">18) Performing Overtaking Unsuccessfully and Returning to Lane Following </a></h5></li>
 				<li><h5> <a href="#issue_19">19) No Overtaking When There Is a Slow Vehicle Ahead </a></h5></li>
 			</ul>
+			<h4> <a id="security_table" href="#security">Security Threats of Discovered Issues</a></h4>
 
 
 		</section>
@@ -63,7 +64,7 @@
                 <h2 id="scenario_description">Testing Scenario Description</h2>
             </div>
 		<div class="row">
-			<pre>   </pre><li><h4 id="bnf"> Please refer to <a href="https://avunit.readthedocs.io/en/latest/Overall_BNF.html">here</a> for the detailed BNF syntax of AVUnit.</h4></li>
+			<pre>   </pre><h5 id="bnf"> Please refer to <a href="https://avunit.readthedocs.io/en/latest/Overall_BNF.html">here</a> for the detailed BNF syntax of AVUnit.</h5>
 		</div>
 			<div class="row">
 				<h5 id="scenario_1">S1: T-Junction (<a href="doc/scenarios/intersection1.txt">script</a>)  &nbsp;<sup><a href="#scenario_table">top</a></sup></h5>
@@ -704,6 +705,22 @@
             </div>
 			<br>
 		</section>
+
+		<div class="row">
+				<div class="col-sm">
+					<h2 id="security">Possible Attacks to AVs with the Discovered Issues &nbsp;<sup><a href="#scenario_table">top</a></sup></h2>
+                </div>
+			</div>
+			<div class="row">
+                <p>The above issues can not only cause safety problems of AVs but also increase security risks during AVs' motion on the road since attackers can easily launch attacks to compromise AVs equipped with Apollo.</p>
+
+				<p>First, low-speed vehicle attacks are possible as attackers can remotely control a vehicle moving slowly along a lane intersecting with the lane of the ego vehicle. It may cause collisions with the ego vehicle. Attackers can also place a low-speed vehicle ahead of the ego vehicle with a specific distance such that the ego vehicle will always follow the adversary vehicle. It will prevent the ego vehicle from completing tasks in time, such as goods or food delivery.</p>
+
+				<p>Second, stopping-vehicle attacks are possible as attackers can remotely control a vehicle stopping temporally before a collision region and then restart its motion. It may cause a collision with the ego vehicle. Attackers may also place a static agent near an intersection on the corresponding outgoing lane of the intersection. It can block the motion of the ego vehicle.</p>
+
+				<p>Third, parallel-vehicle attacks. Attackers can also control a vehicle moving along the adjacent lane of the ego vehicle. It will prevent lane changing of the ego vehicle. Based on the issues, we can also launch other complex attacks using multiple agents. In conclusion, the current Apollo ADS is vulnerable to attacks.</p>
+
+			</div>
 	</div>
 	<script src="libs/bootstrap-4.5.3-dist/js/http_code.jquery.com_jquery-3.5.1.slim.js"></script>
 	<script src="libs/bootstrap-4.5.3-dist/js/http_cdn.jsdelivr.net_npm_popper.js@1.16.1_dist_umd_popper.js"></script>
