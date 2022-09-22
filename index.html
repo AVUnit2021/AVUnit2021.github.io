@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<section>
-			<h4 id="scenario_table"> <a href="#scenario_description">Testing Scenario Description</a></h4>
+			<h4 id="scenario_table"> <a href="#scenario_description">1. Testing Scenario Description</a></h4>
 			<ul>
 				<li><h5> <a href="#scenario_1">S1: T-Junction</a></h5></li>
 				<li><h5> <a href="#scenario_2">S2: Intersection with Single-Direction Roads</a></h5></li>
@@ -31,7 +31,7 @@
 				<li><h5> <a href="#scenario_8">S7: Lane changing among Different Roads</a></h5></li>
 				<li><h5> <a href="#scenario_9">S8: Overtaking Scenario</a></h5></li>
 			</ul>
-			<h4> <a id="issue_table" href="#issue_description">Descriptions of Discovered Issues</a></h4>
+			<h4> <a id="issue_table" href="#issue_description">2. Descriptions of Discovered Issues</a></h4>
 			<ul>
 				<li><h5> <a href="#issue_1">1) Wrong Overtaking Actions</a></h5></li>
 				<li><h5> <a href="#issue_2">2) No Motion Prediction of Low-Speed Vehicles</a></h5></li>
@@ -53,7 +53,7 @@
 				<li><h5> <a href="#issue_18">18) Performing Overtaking Unsuccessfully and Returning to Lane Following </a></h5></li>
 				<li><h5> <a href="#issue_19">19) No Overtaking When There Is a Slow Vehicle Ahead </a></h5></li>
 			</ul>
-			<h4> <a id="security_table" href="#security">Security Threats of Discovered Issues</a></h4>
+			<h4> <a id="security_table" href="#security">3. Security Threats of Discovered Issues</a></h4>
 
 
 		</section>
@@ -61,7 +61,7 @@
 
 		<section class="container">
             <div class="row">
-                <h2 id="scenario_description">Testing Scenario Description</h2>
+                <h2 id="scenario_description">1. Testing Scenario Description</h2>
             </div>
 		<div class="row">
 			<pre>   </pre><h4 id="bnf"> Please refer to <a href="https://avunit.readthedocs.io/en/latest/Overall_BNF.html">here</a> for the detailed BNF syntax of AVUnit.</h4>
@@ -228,7 +228,7 @@
 		<section class="container">
             <div class="row">
                 <div class="col">
-                    <h2 id="issue_description">Descriptions of Discovered Issues</h2>
+                    <h2 id="issue_description">2. Descriptions of Discovered Issues</h2>
 <!--                    <p>Note that when Apollo's bounding box (not 3D model) intersects with any obstacle's bounding box,-->
 <!--                        a-->
 <!--                        <b>collision</b> occurs.-->
@@ -706,20 +706,25 @@
 			<br>
 		</section>
 
-		<div class="row">
+			<div class="row">
 				<div class="col-sm">
-					<h2 id="security">Possible Attacks to AVs with the Discovered Issues &nbsp;<sup><a href="#scenario_table">top</a></sup></h2>
+					<h2 id="security">3. Possible Attacks to AVs with the Discovered Issues &nbsp;<sup><a href="#scenario_table">top</a></sup></h2>
                 </div>
 			</div>
 			<div class="row">
-                <p>The above issues can not only cause safety problems of AVs but also increase security risks during AVs' motion on the road since attackers can easily launch attacks to compromise AVs equipped with Apollo.</p>
+				<ul>
+					The above issues can not only cause safety problems of AVs but also increase security risks during AVs' motion on the road since attackers can easily launch attacks to compromise AVs equipped with Apollo.
+				</ul>
+				<ul>
+					First, low-speed vehicle attacks are possible as attackers can remotely control a vehicle moving slowly along a lane intersecting with the lane of the ego vehicle. It may cause collisions with the ego vehicle. Attackers can also place a low-speed vehicle ahead of the ego vehicle with a specific distance such that the ego vehicle will always follow the adversary vehicle. It will prevent the ego vehicle from completing tasks in time, such as goods or food delivery.
+				</ul>
+				<ul>
+					Second, stopping-vehicle attacks are possible as attackers can remotely control a vehicle stopping temporally before a collision region and then restart its motion. It may cause a collision with the ego vehicle. Attackers may also place a static agent near an intersection on the corresponding outgoing lane of the intersection. It can block the motion of the ego vehicle.
+				</ul>
 
-				<p>First, low-speed vehicle attacks are possible as attackers can remotely control a vehicle moving slowly along a lane intersecting with the lane of the ego vehicle. It may cause collisions with the ego vehicle. Attackers can also place a low-speed vehicle ahead of the ego vehicle with a specific distance such that the ego vehicle will always follow the adversary vehicle. It will prevent the ego vehicle from completing tasks in time, such as goods or food delivery.</p>
-
-				<p>Second, stopping-vehicle attacks are possible as attackers can remotely control a vehicle stopping temporally before a collision region and then restart its motion. It may cause a collision with the ego vehicle. Attackers may also place a static agent near an intersection on the corresponding outgoing lane of the intersection. It can block the motion of the ego vehicle.</p>
-
-				<p>Third, parallel-vehicle attacks. Attackers can also control a vehicle moving along the adjacent lane of the ego vehicle. It will prevent lane changing of the ego vehicle. Based on the issues, we can also launch other complex attacks using multiple agents. In conclusion, the current Apollo ADS is vulnerable to attacks.</p>
-
+				<ul>
+					Third, parallel-vehicle attacks. Attackers can also control a vehicle moving along the adjacent lane of the ego vehicle. It will prevent lane changing of the ego vehicle. Based on the issues, we can also launch other complex attacks using multiple agents. In conclusion, the current Apollo ADS is vulnerable to attacks.
+				</ul>
 			</div>
 	</div>
 	<script src="libs/bootstrap-4.5.3-dist/js/http_code.jquery.com_jquery-3.5.1.slim.js"></script>
